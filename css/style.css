@@ -2,4 +2,156 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background: linear-gradient(rgb(0, 150, 136) 20%,
+            rgb(212, 215, 208) 20% 80%);
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.my-profile,
+.chat-profile {
+    height: 75px;
+    background-color: #eaeaea;
+    padding: .5rem;
+}
+
+h5,
+p {
+    margin: 0;
+}
+
+.img-name-profile img {
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.icons-profile i {
+    color: #929391;
+    font-size: 1.3rem;
+    margin: 0 .4rem;
+}
+
+.chat-profile {
+    border-left: #929391 1px solid;
+}
+
+.name-access p {
+    color: #929391;
+    font-weight: bolder;
+}
+
+.list-chat {
+    height: calc(90vh - 75px);
+}
+
+.notifi-desk {
+    background-color: #84d9fa;
+}
+
+.notifi-icon {
+    color: #84d9fa;
+    height: 60px;
+    width: 60px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 1rem;
+}
+
+.notifi-text p {
+    text-decoration: underline;
+    color: #929391;
+}
+
+.serch-chat {
+    background-color: #fafafa;
+    padding: 1rem;
+}
+
+.container-serch {
+    background-color: #f6f6f6;
+    padding: .5rem;
+    width: 100%;
+    border: 1px solid #929391;
+}
+
+.bg-serch {
+    background-color: #fff;
+    padding: .3rem;
+}
+
+.container-serch input {
+    border: none;
+    width: 80%;
+}
+
+.container-serch i {
+    color: #929391;
+    font-size: 1.3rem;
+    margin: 0 .5rem;
+}
+
+.chats {
+    background-color: #fafafa;
+}
+
+.current-chat {
+    height: calc(90vh - 165px);
+    background-image: url("../img/mine.jpg");
+    padding: 3rem;
+}
+
+.mex-container {
+    padding: .8rem;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    position: relative;
+}
+
+.mex-sent {
+    background-color: #d1fabe;
+}
+
+.mex-received {
+    background-color: #fff;
+}
+
+.text-mex {
+    margin-right: 2.5rem;
+}
+
+.time-mex {
+    font-size: 1rem;
+    position: absolute;
+    bottom: 0px;
+    right: 5px;
+}
+
+.container-icon-write {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.write-mex {
+    height: 90px;
+    background-color: #eaeaea;
+    padding: 1rem;
+    color: #929391;
+    font-size: 2rem;
+}
+
+.write-mex input {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 1rem;
+    padding: .5rem;
 }
