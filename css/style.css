@@ -105,6 +105,7 @@ p {
     height: calc(90vh - 165px);
     background-image: url("../img/mine.jpg");
     padding: 3rem;
+    overflow-y: auto;
 }
 
 .mex-container {

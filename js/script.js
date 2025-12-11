@@ -170,11 +170,29 @@ createApp({
             ],
 
             chatActive: 0,
+            newMexInput: '',
         }
     },
     methods: {
         showMexChat(index) {
             this.chatActive = index;
+        },
+        newMex() {
+            let object = {
+                message: this.newMexInput,
+                status: 'sent',
+            };
+            this.contacts[this.chatActive].messages.push(object);
+            this.newMexInput = '';
+
+            setTimeout(this.answereNewMex, 1000)
+        },
+        answereNewMex() {
+            let object = {
+                message: 'ok',
+                status: 'received',
+            };
+            this.contacts[this.chatActive].messages.push(object);
         }
     }
 }).mount("#app")
