@@ -68,29 +68,29 @@ p {
     color: #929391;
 }
 
-.serch-chat {
+.search-chat {
     background-color: #fafafa;
     padding: 1rem;
 }
 
-.container-serch {
+.container-search {
     background-color: #f6f6f6;
     padding: .5rem;
     width: 100%;
     border: 1px solid #929391;
 }
 
-.bg-serch {
+.bg-search {
     background-color: #fff;
     padding: .3rem;
 }
 
-.container-serch input {
+.container-search input {
     border: none;
     width: 80%;
 }
 
-.container-serch i {
+.container-search i {
     color: #929391;
     font-size: 1.3rem;
     margin: 0 .5rem;

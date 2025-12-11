@@ -82,16 +82,16 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="serch-chat d-flex py-3">
-                                    <div class="container-serch">
-                                        <div class="bg-serch">
+                                <div class="search-chat d-flex py-3">
+                                    <div class="container-search">
+                                        <div class="bg-search">
                                             <i class="fa-solid fa-magnifying-glass"></i>
-                                            <input type="text" name="serch-chat" id="serch-chat"
-                                                placeholder="Cerca o inizia una nuova chat">
+                                            <input v-model="searchChatInput" type="text" name="search-chat"
+                                                id="search-chat" placeholder="Cerca o inizia una nuova chat">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="chats" v-for="(chat, index) in contacts" @click="showMexChat(index)">
+                                <div class="chats" v-for="(chat, index) in searchChat" @click="showMexChat(chat)">
                                     <div class="img-name-profile d-flex align-items-center p-3">
                                         <img :src="`./img/avatar${chat.avatar}.jpg`" alt="img-profile">
                                         <div class="name-access d-flex flex-column">

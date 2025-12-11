@@ -171,11 +171,25 @@ createApp({
 
             chatActive: 0,
             newMexInput: '',
+            searchChatInput: '',
+        }
+    },
+    computed: {
+        searchChat() {
+            const query = this.searchChatInput.toLowerCase().trim();
+
+            if (query !== '') {
+                return this.contacts.filter(elem =>
+                    elem.name.toLowerCase().includes(query)
+                );
+            } else {
+                return this.contacts;
+            }
         }
     },
     methods: {
-        showMexChat(index) {
-            this.chatActive = index;
+        showMexChat(contact) {
+            this.chatActive = this.contacts.findIndex(c => c.avatar === contact.avatar);
         },
         newMex() {
             let object = {
@@ -193,6 +207,6 @@ createApp({
                 status: 'received',
             };
             this.contacts[this.chatActive].messages.push(object);
-        }
+        },
     }
 }).mount("#app")
