@@ -167,10 +167,14 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+
+            chatActive: 0,
         }
     },
     methods: {
-
+        showMexChat(index) {
+            this.chatActive = index;
+        }
     }
 }).mount("#app")

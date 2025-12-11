@@ -91,7 +91,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="chats" v-for="(chat, index) in contacts">
+                                <div class="chats" v-for="(chat, index) in contacts" @click="showMexChat(index)">
                                     <div class="img-name-profile d-flex align-items-center p-3">
                                         <img :src="`./img/avatar${chat.avatar}.jpg`" alt="img-profile">
                                         <div class="name-access d-flex flex-column">
@@ -104,40 +104,14 @@
                         </div>
                         <div class="col-8 g-0">
                             <div class="current-chat">
-                                <div class="row my-3">
+                                <div class="row my-3" v-for="(chat, index) in contacts[chatActive].messages">
                                     <div class="col-12">
-                                        <div class="mex d-flex justify-content-end">
-                                            <div class="mex-container mex-sent text-end d-flex">
+                                        <div class="mex d-flex"
+                                            :class="(chat.status == 'sent') ? 'justify-content-end' : 'justify-content-start'">
+                                            <div class="mex-container text-end d-flex"
+                                                :class="(chat.status == 'sent') ? 'mex-sent' : 'mex-received'">
                                                 <p class="text-mex">
-                                                    Hai portato a spasso il cane?
-                                                </p>
-                                                <p class="time-mex">
-                                                    15:50
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row my-3">
-                                    <div class="col-12">
-                                        <div class="mex d-flex justify-content-end">
-                                            <div class="mex-container mex-sent text-end d-flex">
-                                                <p class="text-mex">
-                                                    Ricordati di stendere i panni
-                                                </p>
-                                                <p class="time-mex">
-                                                    15:50
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row my-3">
-                                    <div class="col-12">
-                                        <div class="mex d-flex justify-content-start">
-                                            <div class="mex-container mex-received text-end d-flex">
-                                                <p class="text-mex">
-                                                    Ricordati di stendere i panni
+                                                    {{chat.message}}
                                                 </p>
                                                 <p class="time-mex">
                                                     15:50

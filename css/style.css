@@ -98,6 +98,7 @@ p {
 
 .chats {
     background-color: #fafafa;
+    cursor: pointer;
 }
 
 .current-chat {
