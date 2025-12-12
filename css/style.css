@@ -47,6 +47,7 @@ p {
 
 .list-chat {
     height: calc(90vh - 75px);
+    background-color: #fafafa;
 }
 
 .notifi-desk {
@@ -88,6 +89,7 @@ p {
 .container-search input {
     border: none;
     width: 80%;
+    padding: .5rem;
 }
 
 .container-search i {
@@ -99,6 +101,15 @@ p {
 .chats {
     background-color: #fafafa;
     cursor: pointer;
+    position: relative;
+}
+
+.chat-time {
+    position: absolute;
+    top: 25px;
+    right: 5px;
+    color: #929391;
+    font-size: .8rem;
 }
 
 .current-chat {
@@ -109,7 +120,7 @@ p {
 }
 
 .mex-container {
-    padding: .8rem;
+    padding: 1.3rem;
     border-radius: 10px;
     font-size: 1.3rem;
     position: relative;

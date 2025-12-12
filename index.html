@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzapp</title>
 
+    <!-- LUXON -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.7.2/luxon.min.js"
+        integrity="sha512-nWT3BmMQkC1jYtKIXgDcHeiq4suByiM3ioS24rDMKITplQHL6/943K2M35I6zCq4t0PaiupBSnq+Ax0ARpZGVQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- GOOGLE FONT -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,10 +58,10 @@
                         <div class="col-8  g-0">
                             <div class="chat-profile d-flex align-items-center justify-content-between">
                                 <div class="img-name-profile d-flex align-items-center">
-                                    <img src="./img/avatar_io.jpg" alt="img-profile">
+                                    <img :src="`./img/avatar${contacts[chatActive].avatar}.jpg`" alt="img-profile">
                                     <div class="name-access d-flex flex-column">
-                                        <h5>Michele</h5>
-                                        <p>Ultimo accesso oggi alle 12:00</p>
+                                        <h5>{{contacts[chatActive].name}}</h5>
+                                        <p>Ultimo accesso oggi alle {{convertDate()}}</p>
                                     </div>
                                 </div>
                                 <div class="icons-profile d-flex">
@@ -96,7 +102,12 @@
                                         <img :src="`./img/avatar${chat.avatar}.jpg`" alt="img-profile">
                                         <div class="name-access d-flex flex-column">
                                             <h5>{{chat.name}}</h5>
-                                            <p>Ultimo messaggio inviato</p>
+                                            <p>{{chat.messages[chat.messages.length-1].message}}</p>
+                                        </div>
+                                        <div class="chat-time">
+                                            <p>
+                                                {{chat.messages[chat.messages.length-1].date}}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -114,7 +125,7 @@
                                                     {{chat.message}}
                                                 </p>
                                                 <p class="time-mex">
-                                                    15:50
+                                                    {{chat.date}}
                                                 </p>
                                             </div>
                                         </div>

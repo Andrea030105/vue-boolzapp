@@ -2,6 +2,8 @@ const {
     createApp
 } = Vue;
 
+const dt = luxon.DateTime;
+
 createApp({
     data() {
         return {
@@ -193,6 +195,7 @@ createApp({
         },
         newMex() {
             let object = {
+                date: this.nowTime(),
                 message: this.newMexInput,
                 status: 'sent',
             };
@@ -203,10 +206,35 @@ createApp({
         },
         answereNewMex() {
             let object = {
+                date: this.nowTime(),
                 message: 'ok',
                 status: 'received',
             };
             this.contacts[this.chatActive].messages.push(object);
         },
+        nowTime() {
+            let currentTime = dt.now().setLocale('it').toLocaleString(dt.TIME_24_SIMPLE);
+            return currentTime;
+        },
+        convertDate() {
+            const dataCompletaArray = [];
+            const soloOraArray = [];
+            for (let i = 0; i <= this.contacts.length - 1; i++) {
+                /* recupoero e pusho le date di tutti gli ultimi messaggi della chat */
+                dataCompletaArray.push(this.contacts[i].messages[this.contacts[i].messages.length - 1].date);
+                if (this.contacts[i].messages[this.contacts[i].messages.length - 1].date.length == 19) {
+                    /* converto il formato data in data luxon */
+                    dataCompletaArray[i] = luxon.DateTime.fromFormat(dataCompletaArray[i], 'dd/MM/yyyy HH:mm:ss');
+                    /* converto la data in ore e minuti */
+                    let soloOra = dataCompletaArray[i].toFormat('HH:mm');
+                    /* pusho tutto in un nuovo arrey */
+                    soloOraArray.push(soloOra);
+                } else {
+                    let soloOra = this.contacts[this.chatActive].messages[this.contacts[this.chatActive].messages.length - 1].date;
+                    soloOraArray.push(soloOra);
+                }
+            }
+            return soloOraArray[this.chatActive];
+        }
     }
 }).mount("#app")
