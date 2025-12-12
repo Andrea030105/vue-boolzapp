@@ -126,6 +126,30 @@ p {
     position: relative;
 }
 
+.mex-container:hover .toggole {
+    display: block;
+}
+
+.toggole {
+    display: none;
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.box-toggole {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 8px;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    z-index: 1;
+    box-shadow: 2px 2px 2px 2px #a6a7a5;
+}
+
 .mex-sent {
     background-color: #d1fabe;
 }

@@ -174,6 +174,7 @@ createApp({
             chatActive: 0,
             newMexInput: '',
             searchChatInput: '',
+            openMenuIndex: null,
         }
     },
     computed: {
@@ -235,6 +236,20 @@ createApp({
                 }
             }
             return soloOraArray[this.chatActive];
+        },
+        showBoxDeleteMex(index) {
+            console.log('Toggle chiamato, index:', index, 'openMenuIndex prima:', this.openMenuIndex);
+            this.openMenuIndex = this.openMenuIndex === index ? null : index;
+            console.log('openMenuIndex dopo:', this.openMenuIndex);
+        },
+        deleteMex(index) {
+            console.log('Delete chiamato, index:', index);
+            this.contacts[this.chatActive].messages.splice(index, 1);
+            this.openMenuIndex = null;
+            console.log('openMenuIndex dopo delete:', this.openMenuIndex);
+        },
+        lastMexList(index) {
+            return this.contacts[index].messages[this.contacts[index].messages.length - 1].message.slice(0, 30) + '...';
         }
     }
 }).mount("#app")

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzapp</title>
+    <link rel="shortcut icon" href="./img/icon-boolzapp.png" type="image/x-icon">
 
     <!-- LUXON -->
 
@@ -102,7 +103,7 @@
                                         <img :src="`./img/avatar${chat.avatar}.jpg`" alt="img-profile">
                                         <div class="name-access d-flex flex-column">
                                             <h5>{{chat.name}}</h5>
-                                            <p>{{chat.messages[chat.messages.length-1].message}}</p>
+                                            <p>{{lastMexList(index)}}</p>
                                         </div>
                                         <div class="chat-time">
                                             <p>
@@ -127,6 +128,12 @@
                                                 <p class="time-mex">
                                                     {{chat.date}}
                                                 </p>
+                                                <div @click="showBoxDeleteMex(index)" class="toggole">
+                                                    <i class="fa-solid fa-angle-down"></i>
+                                                </div>
+                                                <div class="box-toggole" :class="(openMenuIndex==index)? 'd-block': ''">
+                                                    <p @click="deleteMex(index)">Delete Mex</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
